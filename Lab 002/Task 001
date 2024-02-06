@@ -1,0 +1,40 @@
+/*
+  Create a class called Reverse. This class must include one integer variable, one getInput ()
+function, and one doReverse() function. Your task is to take an integer input from the
+keyboard using the getInput() function and reverse it through doReverse() function. Create
+necessary constructors.
+*/
+
+/*
+ * @author user
+ * lab 002 Task 003
+ * Shajjad Hossain
+ * 21225103142
+ */
+
+import java.util.*;
+public class Reverse {
+    int num=0;
+    void getInput()
+    {
+    Scanner sc = new Scanner(System.in);
+    num = sc.nextInt();
+   }   
+   void doReverse() {
+        int rNum = 0;
+        int oNum = num;
+
+        while (oNum != 0) {                       
+            int d = oNum % 10;
+            rNum = rNum * 10 + d;
+            oNum /= 10;
+        }
+        System.out.println("Reversed number: " + rNum);
+    }     
+    public static void main(String[] args) {
+        Reverse obj =new Reverse();
+        obj.getInput();
+        obj.doReverse();
+        
+    }
+}
