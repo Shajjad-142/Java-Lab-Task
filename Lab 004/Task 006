@@ -1,0 +1,39 @@
+/*6. Suppose you have a Train class. You have to keep track of how many trains have started their
+journey after 10 a.m. Write a code to implement the scenario.
+
+*/
+
+/**
+ *
+ * @author LAB-418
+ * Shajjad Hossain
+ * 21225103142
+ */
+import java.time.*;
+class Trainn {
+   static int A_start = 0;
+
+
+    public void start(LocalTime s_Time) {
+        if (s_Time.isAfter(LocalTime.of(10, 0))) {
+            A_start++;
+        }
+    }
+
+    public static int getTrain() {
+        return A_start;
+    }
+}
+
+public class Train {
+    public static void main(String[] args) {
+        Trainn train1 = new Trainn();
+        Trainn train2 = new Trainn();
+
+        
+        train1.start(LocalTime.of(23, 0));
+        train2.start(LocalTime.of(11, 0));
+
+        System.out.println("Number of trains started after 10 a.m.: " + Trainn.getTrain());
+    }
+}
