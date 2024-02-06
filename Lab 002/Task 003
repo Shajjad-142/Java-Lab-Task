@@ -1,0 +1,72 @@
+/*
+  Suppose, you work in a Box manufacturing company. Your task is to ensure the size of the
+boxes before being delivered to the clients. Boxes must be 10 meters in length, 12 meters
+in width, and 8 meters long in height. Now, you are assigned to test whether all the
+properties are matched with the required/allotted values. If not, then increment or
+decrement the values where necessary. For example, if the length is 9 meters, then
+increment it by 1 or if the height is 10 meters, decrement it by 2. You must perform these
+operations with the help of Box objects.
+*/
+
+
+/*
+ * @author user
+ * lab 002 Task 003
+ * Shajjad Hossain
+ * 21225103142
+ */
+import java.util.*;
+
+public class Box {
+    
+    int length=10;
+    int width=12;
+    int height=8;
+    
+    public void Box(int length, int width, int height) {
+        this.length = length;
+        this.width = width;
+        this.height = height;
+    }
+
+    void Bo(int l, int w, int h) {
+        int cl, cw, ch;
+        if (length >= l) {
+            cl = length - l;
+            System.out.println(l + cl);
+        } else {
+            cl = l - length;
+            System.out.println(l - cl);
+        }
+
+        if (width >= w) {
+            cw = width - w;
+            System.out.println(w + cw);
+        } else {
+            cw = w - width;
+            System.out.println(w - cw);
+        }
+
+        if (height >= h) {
+            ch = height - h;
+            System.out.println(h + ch);
+        } else {
+            ch = h - height;
+            System.out.println(h - ch);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Box box = new Box();
+       // box.Box(10, 12, 8);
+
+        System.out.println("Enter new dimensions:");
+        int newLength = sc.nextInt();
+        int newWidth = sc.nextInt();
+        int newHeight = sc.nextInt();
+
+        box.Bo(newLength, newWidth, newHeight);
+    }
+}
