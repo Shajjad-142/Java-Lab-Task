@@ -1,0 +1,93 @@
+/*
+    5. Create an interface named People. This must include getfirstname() and getlastname() and
+displayname() methods. Two child classes named Student and Teacher must implement methods
+to display full name for an individual person.
+ */
+/**
+ *
+ * @author LAB-418
+ * Shajjad Hossain
+ * 21225103142
+ */
+import java.util.*;
+interface People{
+ String getFirstName();
+ String getLastName();
+ void DisplayName();
+ 
+}
+
+class Studentt implements People{
+String firstName;
+String lastName;
+public Studentt(String firstName,String lastName)
+{
+    this.firstName=firstName;
+    this.lastName=lastName;
+}
+@Override
+public String getFirstName()
+{
+    return firstName;
+}
+@Override
+public String getLastName()
+{
+    return lastName;
+}
+@Override
+public void DisplayName()
+{
+    System.out.println("Student: "+firstName+ " "+ lastName +"\n" );
+    
+}
+}
+
+
+class Teacher implements People{
+    String firstName;
+    String lastName;
+    public Teacher(String firstName,String lastName){
+        this.firstName=firstName;
+        this.lastName=lastName;
+    }
+    @Override
+public String getFirstName()
+{
+    return firstName;
+}
+@Override
+public String getLastName()
+{
+    return lastName;
+}
+@Override
+public void DisplayName()
+{
+    System.out.println("Teacher: "+firstName+ " "+ lastName +"\n" );
+    
+}
+}
+
+
+public class Person2 {
+    public static void main(String[] args) {
+        
+       
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter Student First Name: ");
+        String sfirstName=sc.nextLine();
+        System.out.println("Enter Student Last Name: ");
+        String slastName=sc.nextLine();
+        System.out.println("Enter Teacher First Name: ");
+        String tfirstName=sc.nextLine();
+        System.out.println("Enter Teacher Last Name: ");
+        String tlastName=sc.nextLine();
+        
+        Studentt std=new Studentt(sfirstName,slastName);
+        std.DisplayName();
+        Teacher tea=new Teacher(tfirstName,tlastName);
+        tea.DisplayName();
+    }
+    
+}
