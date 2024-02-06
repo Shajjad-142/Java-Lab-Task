@@ -1,3 +1,17 @@
+/*
+  1. Create an Abstract class Student that contains a method take_exam(), implement the method
+in the child classes PhdStudent and GradStudent in which PhdStudent takes exam by giving his
+final defense presentation while the graduate student gives a written paper.
+*/
+
+/*
+ * @author user
+ * lab 002 Task 003
+ * Shajjad Hossain
+ * 21225103142
+ */
+
+
 abstract class Student {
     public abstract void take_exam();
 }
