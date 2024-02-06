@@ -1,0 +1,41 @@
+/*
+ * @author user
+ * lab 002 Task 003
+ * Shajjad Hossain
+ * 21225103142
+ */
+
+/*
+    You and your friends are going to order food from FoodPanda. You have to choose your
+food items. You are asked to write a function called Orderfood () which takes the name of
+foods and number of items as the arguments. The name and number of food items may
+vary from two to four and from person to person. Complete the task using function
+overloading concept.
+*/
+public class FoodPanda {
+    
+    public void orderFood(String food1, int quantity1, String food2, int quantity2) {
+        System.out.println("Order placed for " + quantity1 + " " + food1 + " and " + quantity2 + " " + food2);
+    }
+
+
+    public void orderFood(String food1, int quantity1, String food2, int quantity2, String food3, int quantity3) {
+        System.out.println("Order placed for " + quantity1 + " " + food1 + ", " + quantity2 + " " + food2 + ", and " + quantity3 + " " + food3);
+    }
+
+
+    public void orderFood(String food1, int quantity1, String food2, int quantity2, String food3, int quantity3, String food4, int quantity4) {
+        System.out.println("Order placed for " + quantity1 + " " + food1 + ", " + quantity2 + " " + food2 + ", " + quantity3 + " " + food3 + ", and " + quantity4 + " " + food4);
+    }
+
+    public static void main(String[] args) {
+        FoodPanda foodOrder = new FoodPanda();
+
+        foodOrder.orderFood("Pizza", 2, "Burger", 3);
+
+        foodOrder.orderFood("Sushi", 1, "Pasta", 2, "Salad", 1);
+
+       
+        foodOrder.orderFood("Chicken Curry", 1, "Rice", 2, "Naan", 3, "Lassi", 2);
+    }
+}
