@@ -1,0 +1,68 @@
+/*
+ * @author user
+ * lab 002 Task 003
+ * Shajjad Hossain
+ * 21225103142
+ */
+
+
+/*
+    Create a class named Complex that must have two integer data members (real, and imag).
+Create two constructors, one Read function to take keyboard input, one Add (return object),
+function, and one Display function to print results. The Add function must take one object
+as an argument. Watch the input and output section for better understanding.
+Input
+Enter real and imaginary numbers respectively: 16 7
+Enter real and imaginary numbers respectively: 5 8
+Output:
+Sum = 21 + 15i
+*/
+
+import java.util.*;
+
+public class Complex {
+    private int real;
+    private int imag;
+
+
+    public Complex(int real, int imag) {
+        this.real = real;
+        this.imag = imag;
+    }
+
+    public Complex() {
+        this.real = 0;
+        this.imag = 0;
+    }
+
+    public void readInput() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter real and imaginary numbers: ");
+        this.real = scanner.nextInt();
+        this.imag = scanner.nextInt();
+    }
+
+    public Complex add(Complex ob2) {
+        int sumR = this.real + ob2.real;
+        int sumI = this.imag + ob2.imag;
+
+        return new Complex(sumR, sumI);
+    }
+
+    public void display() {
+        System.out.println("Sum = " + this.real + " + " + this.imag + "i");
+    }
+
+    public static void main(String[] args) {
+       
+        Complex obj1 = new Complex();
+        Complex obj2 = new Complex();
+
+        obj1.readInput();
+        obj2.readInput();
+
+        Complex sum = obj1.add(obj2);
+        sum.display();
+    }
+}
