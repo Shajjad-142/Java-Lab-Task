@@ -1,0 +1,30 @@
+abstract class Student {
+    public abstract void take_exam();
+}
+
+class PhdStudent extends Student {
+    @Override
+    public void take_exam() {
+        System.out.println("PhD Student final defense presentation.");
+    }
+}
+
+class GradStudent extends Student {
+    @Override
+    public void take_exam() {
+        System.out.println("Graduate student gives a written paper.");
+    }
+}
+
+public class Exam {
+    public static void main(String[] args) {
+        Student phd = new PhdStudent();
+        Student grad = new GradStudent();
+
+        System.out.println("PhD Student:");
+        phd.take_exam();
+
+        System.out.println("\nGraduate Student:");
+        grad.take_exam();
+    }
+}
